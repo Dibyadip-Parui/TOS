@@ -1,0 +1,4 @@
+
+|Lable (16bytes) | Entries (4B) | ending sector of table(4B) | Attributes (8B)|
+
+|Lable (26bytes) | Attributes (4B)| Pointer(1B) | Size(1B) |
