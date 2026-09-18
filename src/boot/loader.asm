@@ -28,7 +28,9 @@ start:
         xor ax, ax
     
     ;finaly we have space
-    push msg
+
+    lea di, msg
+    call print
     add sp, 2
 
 halt:
@@ -60,3 +62,5 @@ gdt_descriptor:
     dd gdt_start                ; Base address of GDT
 
 msg: db "Stage 2 Bootloader loaded.", 0
+;including the files
+%include "src/boot/BootLib/text.asm"

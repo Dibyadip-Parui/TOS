@@ -5,7 +5,6 @@ print:
     mov bp, sp
     pusha
 
-    mov di, [bp+2]
     .loop:
         mov ah, 0x0e
         mov al, [di]
