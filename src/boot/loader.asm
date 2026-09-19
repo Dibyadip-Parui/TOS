@@ -33,6 +33,8 @@ start:
     call print
     add sp, 2
 
+    call GetMemMap
+
 halt:
     hlt
     jmp halt
@@ -64,3 +66,4 @@ gdt_descriptor:
 msg: db "Stage 2 Bootloader loaded.", 0
 ;including the files
 %include "src/boot/BootLib/text.asm"
+%include "src/boot/BootLib/memory.asm"
