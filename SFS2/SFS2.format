@@ -1,0 +1,27 @@
+
+Max partition size : 16TiB
+Max file size: 256GiB
+Max files/folders in root directory: 127
+Max files/folders in sub-root directory: 128
+Disk bitmap size at full 16TiB capacity: 512MiB
+
+file/folder entry format:
+_____________________________________________________________________
+| 16Byte |   4B    |         2B             |    2B    |     8B     |
+|  name  | pointer | Size in Clusters(4KiB) | NO of PT | Attributes |
+
+Partition entry format:
+__________________________________________________
+| 16B   | 1B            | 8B         | 4B   | ND | //ND == no data
+| Lable | No of entries | Attributes | Size | 3B |
+
+the prtition entry is the first entry in the root dir instead of file/folder entries
+
+MBR entry format
+
+0x00: Drive status (0x80 for active/ bootable)
+0x01: STarting CHS address (Normaly left 0) 3bytes
+0x04: Type of partition
+0x05: Ending CHS address (This one is also normaly left 0) 3bytes
+0x08: Starting LBA 4bytes
+0x0C total sectors 4bytes
